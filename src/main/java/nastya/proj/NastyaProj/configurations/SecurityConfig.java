@@ -1,7 +1,7 @@
 package nastya.proj.NastyaProj.configurations;
 
+import lombok.RequiredArgsConstructor;
 import nastya.proj.NastyaProj.services.CustomUserDetailsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,13 +13,23 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Класс для настройки авторизации.
+ */
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
 
-    @Autowired
-    private CustomUserDetailsService userDetailsService;
+    private final CustomUserDetailsService userDetailsService;
 
+    /**
+     * Настраивает правила авторизации для HTTP запросов, включая разрешение доступа
+     * к определенным URL, настройку страницы входа и разрешение выхода из системы.
+     * @param http {@link HttpSecurity} объект, используемый для настройки безопасности приложения.
+     * @return настроенный {@link SecurityFilterChain}, который управляет фильтрацией безопасности.
+     * @throws Exception, если возникают ошибки при настройке.
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -34,10 +44,17 @@ public class SecurityConfig {
         return http.build();
     }
 
+    /**
+     * Метод, который позволяет настраивать параметры аутентификации.
+     * @param http {@link HttpSecurity} объект, используемый для настройки безопасности приложения.
+     * @return {@link AuthenticationManager}, который управляет процессом аутентификации.
+     * @throws Exception, если возникают ошибки при настройке.
+     */
     @Bean
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder =
-                http.getSharedObject(AuthenticationManagerBuilder.class);
+                http
+                        .getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
@@ -45,11 +62,20 @@ public class SecurityConfig {
         return authenticationManagerBuilder.build();
     }
 
+    /**
+     * Метод возвращает экземпляр PasswordEncoder,
+     * который является интерфейсом для кодирования паролей.
+     * @return объект {@link BCryptPasswordEncoder }.
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(8);
     }
 
+    /**
+     * Метод, который возвращает массив разрешённых ссылок для неавторизованных пользователей.
+     * @return массив {@link String} разрешённых ссылок для неавторизованных пользователей.
+     */
     private String[] getPermitAllUrls() {
         return new String[] {
                 "/",

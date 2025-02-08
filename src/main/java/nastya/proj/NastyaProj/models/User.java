@@ -13,6 +13,10 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Класс описывающий сущность пользователя в базе данных.
+ * Так же реализует интерфейс {@link UserDetails} нужный для авторизации.
+ */
 @Entity
 @Data
 @Table(name = "users")
