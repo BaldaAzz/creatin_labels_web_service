@@ -23,7 +23,7 @@ public class UserController {
      */
     @GetMapping("/login")
     public String login() {
-        return "login";
+        return "auth/login";
     }
 
     /**
@@ -32,7 +32,7 @@ public class UserController {
      */
     @GetMapping("/registration")
     public String registration() {
-        return "registration";
+        return "auth/registration";
     }
 
     /**
@@ -49,7 +49,7 @@ public class UserController {
         if(!userService.createUser(user)) {
             model.addAttribute("errorMessage", "Пользователь с таким email уже существует!");
 
-            return "registration";
+            return "auth/registration";
         }
 
         return "redirect:/login";
