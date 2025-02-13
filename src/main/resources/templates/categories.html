@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DYL</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/categories.css}">
 </head>
 <body>
     <header th:insert="blocks/header"></header>
     <section class="categories">
         <div class="categories__cards" th:each="category : ${categoryList}">
-            <a href="#">
+            <a th:href="@{/category/{id}(id=${category.id})}">
                 <div class="categories__card">
                     <div class="categories__card__img-wrapper">
-                        <img src="img/category-1.jpg" alt="водка">
+                        <img th:src="@{/img/category-1.jpg}" alt="водка">
                     </div>
                     <p class="categories__card__text" th:text="${category.name}"></p>
                 </div>

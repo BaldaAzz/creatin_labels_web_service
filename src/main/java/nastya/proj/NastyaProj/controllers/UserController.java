@@ -1,7 +1,9 @@
 package nastya.proj.NastyaProj.controllers;
 
 import lombok.RequiredArgsConstructor;
+import nastya.proj.NastyaProj.models.Review;
 import nastya.proj.NastyaProj.models.User;
+import nastya.proj.NastyaProj.services.ReviewService;
 import nastya.proj.NastyaProj.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
 
     private final UserService userService;
+    private final ReviewService reviewService;
 
     /**
      * Метод, который отправляет клиенту страницу для авторизации.
@@ -53,5 +56,20 @@ public class UserController {
         }
 
         return "redirect:/login";
+    }
+
+    @GetMapping("/reviews")
+    public String showReviews(Model model) {
+        model.addAttribute("reviews", reviewService.findAll());
+        return "reviews";
+    }
+
+    @PostMapping("/reviews")
+    public String createReview(Review review, Model model) {
+        if(!reviewService.createReview(review)) {
+            model.addAttribute("errorMessage", "Произошла ошибка!");
+        }
+
+        return "redirect:/reviews";
     }
 }

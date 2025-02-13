@@ -6,6 +6,7 @@ import nastya.proj.NastyaProj.services.CategoryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -21,5 +22,17 @@ public class CategoryController {
         model.addAttribute("categoryList", categoryList);
 
         return "categories";
+    }
+
+    @GetMapping("/category/{id}")
+    public String showTypeOfCategoryList(@PathVariable Long id, Model model) {
+        Category categoryWithTypeList = categoryService.findById(id).get();
+        model.addAttribute("category", categoryWithTypeList);
+        return "type-of-category";
+    }
+
+    @GetMapping("/creating-label/{id}")
+    public String showWorkspace(@PathVariable Long id, Model model) {
+        return "work-page";
     }
 }

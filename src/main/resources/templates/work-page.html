@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/work-page.css}">
+</head>
+<body>
+    <header th:insert="blocks/header"></header>
+    <section class="work-space container">
+        <h2 class="work-space__head">Сок</h2>
+        <div class="work-space__interface">
+            <div class="work-space__interface-container">
+                <div class="work-space__main-img-wrapper">
+                    <img th:src="@{/img/work-space-img.jpg}" alt="">
+                </div>
+                <div class="work-space__control-panel">
+                    <div class="work-space__control-panel__button-list">
+                        <button class="submit-button submit-button--control-panel" type="button">картон</button>
+                    </div>
+                    <div class="work-space__img-list">
+                        <button class="img-wrapper-button">
+                            <img th:src="@{/img/dog.png}" alt="">
+                        </button>
+    
+                        <button class="img-wrapper-button">
+                            <img th:src="@{/img/dog.png}" alt="">
+                        </button>
+    
+                        <button class="img-wrapper-button">
+                            <img th:src="@{/img/dog.png}" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button class="submit-button submit-button--control-panel right-position" type="button">сохранить</button>
+        </div>
+    </section>
+    <footer th:insert="blocks/footer"></footer>
+</body>
+</html>

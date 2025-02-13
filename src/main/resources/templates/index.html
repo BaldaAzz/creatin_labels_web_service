@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DYL</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
 <body>
     <header th:insert="blocks/header"></header>
@@ -13,18 +13,18 @@
         <div class="design-label__images">
             <div class="design-label__row-images design-label__row-images--margin-bottom">
                 <div class="design-label__img-wrapper design-label__img-wrapper--margin-right">
-                    <img src="img/design-label_1.png" alt="design-label_1">
+                    <img th:src="@{/img/design-label_1.png}" alt="design-label_1">
                 </div>
                 <div class="design-label__img-wrapper">
-                    <img src="img/design-label_2.png" alt="design-label_2">
+                    <img th:src="@{img/design-label_2.png}" alt="design-label_2">
                 </div>
             </div>
             <div class="design-label__row-images">
                 <div class="design-label__img-wrapper design-label__img-wrapper--margin-right">
-                    <img src="img/design-label_3.png" alt="design-label_3">
+                    <img th:src="@{/img/design-label_3.png}" alt="design-label_3">
                 </div>
                 <div class="design-label__img-wrapper">
-                    <img src="img/design-label_4.png" alt="design-label_4">
+                    <img th:src="@{/img/design-label_4.png}" alt="design-label_4">
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="label-options__content">
             <div class="label-options__card">
                 <div class="label-options__img-wrapper">
-                    <img src="img/shampo.png" alt="шампунь">
+                    <img th:src="@{/img/shampo.png}" alt="шампунь">
                 </div>  
                 <svg class="label-options__card__arrow" width="40" height="71" viewBox="0 0 40 71" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <mask id="mask0_73_60" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="71">
@@ -89,7 +89,7 @@
             </div>
             <div class="label-options__card label-options__card--reverse">
                 <div class="label-options__img-wrapper">
-                    <img src="img/clear-botel.png" alt="средство для стёкл">
+                    <img th:src="@{/img/clear-botel.png}" alt="средство для стёкл">
                 </div>
                 <svg class="label-options__card__arrow label-options__card__arrow--reverce" width="39" height="70" viewBox="0 0 39 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <mask id="mask0_73_52" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="39" height="70">
@@ -126,7 +126,7 @@
             </div>
             <div class="label-options__card">
                 <div class="label-options__img-wrapper">
-                    <img src="img/dog.png" alt="собака">
+                    <img th:src="@{/img/dog.png}" alt="собака">
                 </div>  
                 <svg class="label-options__card__arrow" width="40" height="71" viewBox="0 0 40 71" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <mask id="mask0_73_60" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="71">
@@ -166,7 +166,7 @@
             </div>
             <div class="label-options__card label-options__card--reverse">
                 <div class="label-options__img-wrapper">
-                    <img src="img/clear-botel.png" alt="средство для стёкл">
+                    <img th:src="@{/img/clear-botel.png}" alt="средство для стёкл">
                 </div>
                 <svg class="label-options__card__arrow label-options__card__arrow--reverce" width="39" height="70" viewBox="0 0 39 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <mask id="mask0_73_52" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="39" height="70">
@@ -208,7 +208,7 @@
         <div class="qualites__cards">
             <div class="qualites__card">
                 <div class="qualites__card__img-wprapper">
-                    <img src="img/quality-1.png" alt="гибкость">
+                    <img th:src="@{/img/quality-1.png}" alt="гибкость">
                 </div>
                 <p class="qualites__card__text">
                     гибкость дизайна
@@ -217,7 +217,7 @@
 
             <div class="qualites__card">
                 <div class="qualites__card__img-wprapper">
-                    <img src="img/quality-2.png" alt="экономия">
+                    <img th:src="@{/img/quality-2.png}" alt="экономия">
                 </div>
                 <p class="qualites__card__text">
                     экономия
@@ -228,7 +228,7 @@
             </div>
             <div class="qualites__card">
                 <div class="qualites__card__img-wprapper">
-                    <img src="img/quality-3.png" alt="удобство">
+                    <img th:src="@{/img/quality-3.png}" alt="удобство">
                 </div>
                 <p class="qualites__card__text">
                     удобство
@@ -239,7 +239,7 @@
             </div>
             <div class="qualites__card">
                 <div class="qualites__card__img-wprapper">
-                    <img src="img/quality-4.png" alt="приятный интерфейс">
+                    <img th:src="@{/img/quality-4.png}" alt="приятный интерфейс">
                 </div>
                 <p class="qualites__card__text">
                     приятный
@@ -269,11 +269,11 @@
         <div class="suggestion__cards">
             <div class="suggestion__card">
                 <div class="suggestion__card__img-wrapper">
-                    <img src="img/suggestion-1.jpg" alt="suggestion-1">
+                    <img th:src="@{/img/suggestion-1.jpg}" alt="suggestion-1">
                 </div>
                 <div class="suggestion__card__text-wrapper">
                     <div class="suggestion__card__text__img-wrapper">
-                        <img src="img/paper-clip.png" alt="скрепка">
+                        <img th:src="@{/img/paper-clip.png}" alt="скрепка">
                     </div>
                     <p class="suggestion__card__text">
                         Задумывались ли вы, как важно, чтобы ваш товар выделялся на полке? Как приятно, когда покупатели останавливаются, чтобы рассмотреть именно ваш продукт!
@@ -282,11 +282,11 @@
             </div>
             <div class="suggestion__card suggestion__card--reverce">
                 <div class="suggestion__card__img-wrapper suggestion__card__img-wrapper--reverce">
-                    <img src="img/suggestion-2.jpg" alt="suggestion-2">
+                    <img th:src="@{/img/suggestion-2.jpg}" alt="suggestion-2">
                 </div>
                 <div class="suggestion__card__text-wrapper">
                     <div class="suggestion__card__text__img-wrapper suggestion__card__text__img-wrapper--reverce">
-                        <img src="img/paper-clip.png" alt="скрепка">
+                        <img th:src="@{/img/paper-clip.png}" alt="скрепка">
                     </div>
                     <p class="suggestion__card__text">
                         С нами вы получите не просто дизайн, а настоящее произведение искусства, которое привлечёт внимание и создаст доверие к вашему бренду.
@@ -295,11 +295,11 @@
             </div>
             <div class="suggestion__card">
                 <div class="suggestion__card__img-wrapper">
-                    <img src="img/suggestion-3.jpg" alt="suggestion-3">
+                    <img th:src="@{/img/suggestion-3.jpg}" alt="suggestion-3">
                 </div>
                 <div class="suggestion__card__text-wrapper">
                     <div class="suggestion__card__text__img-wrapper">
-                        <img src="img/paper-clip.png" alt="скрепка">
+                        <img th:src="@{/img/paper-clip.png}" alt="скрепка">
                     </div>
                     <p class="suggestion__card__text">
                         Присоединяйтесь к нам и начните создавать этикетки, которые будут говорить за вас! Дайте вашим продуктам шанс блеснуть на рынке. Мы уверены, что с нашей помощью вы сможете достичь новых высот.
@@ -308,11 +308,11 @@
             </div>
             <div class="suggestion__card suggestion__card--reverce">
                 <div class="suggestion__card__img-wrapper suggestion__card__img-wrapper--reverce">
-                    <img src="img/suggestion-4.jpg" alt="suggestion-4">
+                    <img th:src="@{/img/suggestion-4.jpg}" alt="suggestion-4">
                 </div>
                 <div class="suggestion__card__text-wrapper">
                     <div class="suggestion__card__text__img-wrapper suggestion__card__text__img-wrapper--reverce">
-                        <img src="img/paper-clip.png" alt="скрепка">
+                        <img th:src="@{/img/paper-clip.png}" alt="скрепка">
                     </div>
                     <p class="suggestion__card__text">
                         Не упустите возможность сделать ваш бизнес ещё успешнее. Не теряйте время! Давайте вместе сделаем ваш продукт настоящим хитом на рынке!
