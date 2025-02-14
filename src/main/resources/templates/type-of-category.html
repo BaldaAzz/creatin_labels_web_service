@@ -16,7 +16,7 @@
 <!--                Потом добавить id-->
                 <a th:href="@{/creating-label/{id}(id=${typeOfCategory.id})}">
                     <div class="types__card__img-wrapper">
-                        <img th:src="@{/img/type-1.png}" alt="картинка">
+                        <img th:src="@{${typeOfCategory.image.path + typeOfCategory.image.fileName}}" alt="картинка">
                     </div>
                     <h3 class="types__card__head" th:text="${typeOfCategory.title}"></h3>
                     <p class="types__card__text" th:text="${typeOfCategory.text}"></p>

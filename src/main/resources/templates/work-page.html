@@ -8,36 +8,28 @@
     <link rel="stylesheet" th:href="@{/css/work-page.css}">
 </head>
 <body>
-    <header th:insert="blocks/header"></header>
-    <section class="work-space container">
-        <h2 class="work-space__head">Сок</h2>
-        <div class="work-space__interface">
-            <div class="work-space__interface-container">
-                <div class="work-space__main-img-wrapper">
-                    <img th:src="@{/img/work-space-img.jpg}" alt="">
-                </div>
-                <div class="work-space__control-panel">
-                    <div class="work-space__control-panel__button-list">
-                        <button class="submit-button submit-button--control-panel" type="button">картон</button>
-                    </div>
-                    <div class="work-space__img-list">
-                        <button class="img-wrapper-button">
-                            <img th:src="@{/img/dog.png}" alt="">
-                        </button>
-    
-                        <button class="img-wrapper-button">
-                            <img th:src="@{/img/dog.png}" alt="">
-                        </button>
-    
-                        <button class="img-wrapper-button">
-                            <img th:src="@{/img/dog.png}" alt="">
-                        </button>
-                    </div>
+<header th:insert="blocks/header"></header>
+<section class="work-space container">
+    <h2 class="work-space__head" th:if="${not #lists.isEmpty(images)}" th:text=${images[0].typeOfCategory.title}></h2>
+    <div class="work-space__interface">
+        <div class="work-space__interface-container">
+            <div th:if="${not #lists.isEmpty(images)}" class="work-space__main-img-wrapper">
+                <img th:src="${images[0].image.path} + ${images[0].image.fileName}" alt="">
+            </div>
+            <div class="work-space__control-panel">
+<!--                <div class="work-space__control-panel__button-list">-->
+<!--                    <button class="submit-button submit-button&#45;&#45;control-panel" type="button">картон</button>-->
+<!--                </div>-->
+                <div class="work-space__img-list" th:each="imageForWork : ${images}">
+                    <button class="img-wrapper-button">
+                        <img th:src="${imageForWork.image.path} + ${imageForWork.image.fileName}" alt="">
+                    </button>
                 </div>
             </div>
-            <button class="submit-button submit-button--control-panel right-position" type="button">сохранить</button>
         </div>
-    </section>
-    <footer th:insert="blocks/footer"></footer>
+        <button class="submit-button submit-button--control-panel right-position" type="button">сохранить</button>
+    </div>
+</section>
+<footer th:insert="blocks/footer"></footer>
 </body>
 </html>

@@ -3,7 +3,7 @@
 }
 
 .work-space {
-
+    margin-bottom: 120px;
 }
 
 .work-space__head {
@@ -55,8 +55,6 @@
 
 .work-space__control-panel {
     display: flex;
-    flex-direction: column;
-
 }
 
 .right-position {

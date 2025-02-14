@@ -17,7 +17,7 @@ public class ImageForWork {
     @JoinColumn(name = "image_id", nullable = false)
     private Image image;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "type_of_category_id", nullable = false)
     private TypeOfCategory typeOfCategory;
 }

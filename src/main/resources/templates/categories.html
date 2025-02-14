@@ -14,7 +14,7 @@
             <a th:href="@{/category/{id}(id=${category.id})}">
                 <div class="categories__card">
                     <div class="categories__card__img-wrapper">
-                        <img th:src="@{/img/category-1.jpg}" alt="водка">
+                        <img th:src="@{${category.image.path + category.image.fileName}}" alt="водка">
                     </div>
                     <p class="categories__card__text" th:text="${category.name}"></p>
                 </div>

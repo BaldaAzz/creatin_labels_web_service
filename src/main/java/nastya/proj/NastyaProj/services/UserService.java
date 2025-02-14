@@ -51,7 +51,7 @@ public class UserService {
     private void saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setActive(true);
-        user.getRoles().add(Role.ROLE_USER);
+        user.getRoles().add(Role.ROLE_ADMIN);
         userRepository.save(user);
     }
 }

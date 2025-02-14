@@ -35,15 +35,18 @@
                 Отзывы
             </a>
         </li>
-        <li>
+        <li th:unless="${@authService.isAuthenticated()}">
             <a class="nav-link" th:href="@{/login}">
                 Войти
             </a>
         </li>
-        <li>
+        <li th:if="${@authService.isAuthenticated()}">
             <form th:action="@{/logout}" method="post">
                 <input type="hidden" name="_csrf" th:value="${_csrf.token}">
-                <input type="submit" value="Выйти">
+<!--                <input class="nav-link nav-link&#45;&#45;button" type="submit" value="Выйти">-->
+                <button class="nav-link--button" type="submit">
+                    <span class="nav-link">Выйти</span>
+                </button>
             </form>
         </li>
     </nav>

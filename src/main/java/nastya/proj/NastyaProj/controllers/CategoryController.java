@@ -3,6 +3,7 @@ package nastya.proj.NastyaProj.controllers;
 import lombok.RequiredArgsConstructor;
 import nastya.proj.NastyaProj.models.Category;
 import nastya.proj.NastyaProj.services.CategoryService;
+import nastya.proj.NastyaProj.services.ImageForWorkService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import java.util.List;
 public class CategoryController {
 
     private final CategoryService categoryService;
+    private final ImageForWorkService imageForWorkService;
 
     @GetMapping("/category")
     public String showCategoryList(Model model) {
@@ -33,6 +35,7 @@ public class CategoryController {
 
     @GetMapping("/creating-label/{id}")
     public String showWorkspace(@PathVariable Long id, Model model) {
+        model.addAttribute("images", imageForWorkService.findAllWithId(id));
         return "work-page";
     }
 }

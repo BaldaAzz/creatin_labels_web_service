@@ -66,10 +66,16 @@ a:visited {
     font-weight: 300;
     font-size: 36px;
     color: #000;
+    font-family: "Jura";
 }
 
 .nav__categories-wrapper {
     height: 51px;
+}
+
+.nav-link--button {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 
